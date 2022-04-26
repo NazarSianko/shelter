@@ -30,6 +30,7 @@ async function getData() {
  data = await res.json();
  
  let arr = [0, 1, 2, 3, 4, 5, 6, 7];
+ /*
   const a = arr.splice(Math.floor(Math.random() * arr.length), 1);
   const b = arr.splice(Math.floor(Math.random() * arr.length), 1);
   const c = arr.splice(Math.floor(Math.random() * arr.length), 1);
@@ -46,11 +47,12 @@ document.querySelector('.pets-list').append(createCardTemplate(d))
 document.querySelector('.pets-list').append(createCardTemplate(e))
 document.querySelector('.pets-list').append(createCardTemplate(f))
 document.querySelector('.pets-list').append(createCardTemplate(j))
-document.querySelector('.pets-list').append(createCardTemplate(k))
+document.querySelector('.pets-list').append(createCardTemplate(k))*/
 
 }
 
 getData();
+/*
 const createCardTemplate = (n) => {
     let card = document.createElement("div");
     card.classList.add("friends-card");
@@ -78,7 +80,7 @@ const createCardTemplate = (n) => {
   cardPName.setAttribute('data',`${n}`);
     return card;
     
-  }
+  } */
   const modalWindow = document.querySelector('.modal-window');
 const modalOverlay = document.querySelector('.modal-overlay');
 const closeBtn = document.querySelector('.close-btn');
@@ -174,7 +176,7 @@ modalWindow.addEventListener('click', (e) => {
     } 
   }
  
-let mainPage = document.querySelector('.pets-list');
+let activePage = document.querySelector('.pets-list');
 // Узнать ширину экрана
 let pageWidth =  activePage.clientWidth;
 
