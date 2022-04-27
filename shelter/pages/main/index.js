@@ -1,30 +1,32 @@
 //burger
-function burgerMenu(selector) {
-    let menu = $(selector);
-    let button = menu.find('.burger-menu_button', '.burger-menu_lines');
-    let links = menu.find('.burger-menu_link');
-    let overlay = menu.find('.burger-menu_overlay');
-  
-    button.on('click', (e) => {
-      e.preventDefault();
-      toggleMenu();
-    });
-  
-    links.on('click', () => toggleMenu());
-    overlay.on('click', () => toggleMenu());
-  
-    function toggleMenu() {
-      menu.toggleClass('burger-menu_active');
-  
-      if (menu.hasClass('burger-menu_active')) {
-        $('body').css('overflow', 'hidden');
-      } else {
-        $('body').css('overflow', 'visible');
-      }
+function burgerMenu() {
+  let menu = document.querySelector('.burger-menu');
+  let button = document.querySelector('.burger-menu_button');
+
+  let links = document.querySelectorAll('.burger-menu_link');
+  let overlay = document.querySelector('.burger-menu_overlay');
+
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    toggleMenu();
+  });
+
+
+  links.forEach((el) => el.addEventListener('click', () => toggleMenu()));
+  overlay.addEventListener('click', () => toggleMenu());
+
+  function toggleMenu() {
+    menu.classList.toggle('burger-menu_active');
+
+    if (menu.classList.contains('burger-menu_active')) {
+      document.body.style.overflow ="hidden";
+    } else {
+      document.body.style.overflow ="visible";
     }
   }
+  }
   
-  burgerMenu('.burger-menu');
+  burgerMenu();
   //carousel
   const BTN_LEFT = document.querySelector("#btn-left");
 const BTN_RIGHT = document.querySelector("#btn-right");
@@ -156,7 +158,7 @@ function activeModal (e) {
    // modalOverlay.classList.add('modal-active');
     closeBtn.classList.add('active-closebtn');
     main.classList.add('display-flex');
-    $('body').css('overflow', 'hidden');
+    document.body.style.overflow ="hidden";
     
     const modalAbout = document.createElement('div');
     const modalFlex = document.createElement('div');
@@ -231,7 +233,7 @@ modalWindow.addEventListener('click', (e) => {
      // modalOverlay.classList.remove('modal-active');
       closeBtn.classList.remove('active-closebtn');
       main.classList.remove('display-flex');
-      $('body').css('overflow', 'visible');
+      document.body.style.overflow ="visible";
       modalWindow.innerHTML = '';
   
     } 

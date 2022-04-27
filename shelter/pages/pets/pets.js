@@ -1,29 +1,40 @@
-function burgerMenu(selector) {
-    let menu = $(selector);
+function burgerMenu() {
+    /*let menu = $(selector);
     let button = menu.find('.burger-menu_button', '.burger-menu_lines');
     let links = menu.find('.burger-menu_link');
-    let overlay = menu.find('.burger-menu_overlay');
+    let overlay = menu.find('.burger-menu_overlay');*/
+    let menu = document.querySelector('.burger-menu');
+    let button = document.querySelector('.burger-menu_button');
+    //let lines = document.querySelector('.burger-menu_lines');
+    let links = document.querySelector('.burger-menu_link');
+    let overlay = document.querySelector('.burger-menu_overlay');
   
-    button.on('click', (e) => {
+    button.addEventListener('click', (e) => {
       e.preventDefault();
       toggleMenu();
     });
+    links.addEventListener('click', (e) => {
+      e.preventDefault();
+      menu.classList.remove('burger-menu_active');
+      console.log(1);
+    });
+   
   
-    links.on('click', () => toggleMenu());
-    overlay.on('click', () => toggleMenu());
+    links.addEventListener('click', () => toggleMenu());
+    overlay.addEventListener('click', () => toggleMenu());
   
     function toggleMenu() {
-      menu.toggleClass('burger-menu_active');
+      menu.classList.toggle('burger-menu_active');
   
-      if (menu.hasClass('burger-menu_active')) {
-        $('body').css('overflow', 'hidden');
+      if (menu.classList.contains('burger-menu_active')) {
+        document.body.style.overflow ="hidden";
       } else {
-        $('body').css('overflow', 'visible');
+        document.body.style.overflow ="visible";
       }
     }
   }
   
-  burgerMenu('.burger-menu');
+  burgerMenu();
  let data;
 async function getData() {
   const res = await fetch('https://raw.githubusercontent.com/rolling-scopes-school/tasks/master/stage1/stream1/shelter/pets.json')
@@ -179,7 +190,7 @@ modalWindow.addEventListener('click', (e) => {
 let activePage = document.querySelector('.pets-list');
 // Узнать ширину экрана
 let pageWidth =  activePage.clientWidth;
-
+console.log(pageWidth)
 let item1 = document.querySelector('.card-1');
 let item2 = document.querySelector('.card-2');
 let item3 = document.querySelector('.card-3');
@@ -233,33 +244,33 @@ let nextPage = document.querySelector('.stick-one-right');
 
 //Функция для получения числа страничек
 function countPage(width) {
-  if (width === 1200) {
+  if (width >= 1200) {
     return 6
   }
-  else if (width === 708) {
+  else if (  width < 1200) {
     return 8
   }
-  else {
+ else  {
     return 16
   }
 }
 
 //Функция для получения количества карточек на страничке
 function countCard(width) {
-  if (width === 1200) {
+  if (width >= 1200) {
     return 8
   }
-  else if (width === 708) {
+else  if (708 <= width < 1200) {
     return 6
   }
-  else {
+else   {
     return 3
   }
 }
-
+console.log(countCard(pageWidth))
 // Количество страничек в зависимости от ширины
 let countPages = countPage(pageWidth)
-
+console.log(countPages)
 //Функции разных страничек
 function STATEfirstPage() {
   pagination.currentPage = 1;

@@ -5,6 +5,7 @@
 height: 120px;
 
 }
+
 header {
     position:-webkit-sticky; 
     position:sticky; top:0;
@@ -153,11 +154,11 @@ text-align: left;
 @media (max-width:1280px) {
     .pets-list {
         .friends-card:nth-child(3) {
-        display: none;
+        display: flex;
        
     }
     .friends-card:nth-child(4) {
-        display: none;
+        display: flex;
        
     }
     justify-content: center;
@@ -181,15 +182,18 @@ text-align: left;
         padding-top:40px;
         padding-bottom:75px;
     }
-   
-    .friends-card:nth-child(1){
-        display:none;
+    .pets-list {
+        .friends-card:nth-child(1) {
+        display: flex;
+       
     }
+}
+
     .friends-card:nth-child(2){
-        display:none;
+        display:flex;
     }
     .friends-card:nth-child(5){
-        display:none;
+        display:flex;
     }
 }
 @media (max-width: 720px) {
@@ -218,13 +222,13 @@ text-align: left;
         padding:0px;
     }
     .pets-card:nth-child(4) {
-        display:none;
+        display:flex;
     }
     .pets-card:nth-child(5) {
-        display:none;
+        display:flex;
     }
     .pets-card:nth-child(6) {
-        display:none;
+        display:flex;
     }
     .main-title.title {
         padding-top:40px;
