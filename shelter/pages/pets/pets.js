@@ -6,18 +6,14 @@ function burgerMenu() {
     let menu = document.querySelector('.burger-menu');
     let button = document.querySelector('.burger-menu_button');
     //let lines = document.querySelector('.burger-menu_lines');
-    let links = document.querySelector('.burger-menu_link');
+    let links = document.querySelectorAll('.burger-menu_link');
     let overlay = document.querySelector('.burger-menu_overlay');
   
     button.addEventListener('click', (e) => {
       e.preventDefault();
       toggleMenu();
     });
-    links.addEventListener('click', (e) => {
-      e.preventDefault();
-      menu.classList.remove('burger-menu_active');
-      console.log(1);
-    });
+    links.forEach((e) => e.addEventListener('click', () => toggleMenu()));
    
   
     links.addEventListener('click', () => toggleMenu());
