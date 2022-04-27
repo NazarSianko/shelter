@@ -14,9 +14,6 @@ function burgerMenu() {
       toggleMenu();
     });
     links.forEach((e) => e.addEventListener('click', () => toggleMenu()));
-   
-  
-    links.addEventListener('click', () => toggleMenu());
     overlay.addEventListener('click', () => toggleMenu());
   
     function toggleMenu() {
