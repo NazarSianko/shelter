@@ -99,7 +99,7 @@ function activeModal (e) {
    // modalOverlay.classList.add('modal-active');
     closeBtn.classList.add('active-closebtn');
     main.classList.add('display-flex');
-    $('body').css('overflow', 'hidden');
+          document.body.style.overflow ="hidden";
     
     const modalAbout = document.createElement('div');
     const modalFlex = document.createElement('div');
@@ -174,7 +174,7 @@ modalWindow.addEventListener('click', (e) => {
      // modalOverlay.classList.remove('modal-active');
       closeBtn.classList.remove('active-closebtn');
       main.classList.remove('display-flex');
-      $('body').css('overflow', 'visible');
+          document.body.style.overflow ="visible";
       modalWindow.innerHTML = '';
   
     } 
